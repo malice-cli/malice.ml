@@ -1,3 +1,5 @@
+import ky from 'ky';
+
 
 var template = ` <div class="products-row">
           <button class="cell-more-button">
@@ -25,13 +27,8 @@ var template = ` <div class="products-row">
           <div class="product-cell emojiid"><span class="cell-label">Id:</span>EMOJIID</div>
         </div>`
 
-fetch("https://cdn.malice.ml/getfiles")
-.then(function (response) {
-return response.json();
-})
-.then(function (data) {
-console.log(data)
-})
-.catch(function (error) {
-console.log("Error: " + error);
-});
+// fetch("https://cdn.malice.ml/getfiles")
+
+const json = await ky.post('https://example.com', {json: {foo: true}}).json();
+
+console.log(json);
