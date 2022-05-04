@@ -1,2 +1,0 @@
-# malice.ml
-s
