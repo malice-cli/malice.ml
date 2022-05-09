@@ -1,6 +1,3 @@
-import ky from 'ky';
-
-
 var template = ` <div class="products-row">
           <button class="cell-more-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -26,9 +23,3 @@ var template = ` <div class="products-row">
           <div class="product-cell filesize"><span class="cell-label">Size:</span>FILESIZE</div>
           <div class="product-cell emojiid"><span class="cell-label">Id:</span>EMOJIID</div>
         </div>`
-
-// fetch("https://cdn.malice.ml/getfiles")
-
-const json = await ky.post('https://example.com', {json: {foo: true}}).json();
-
-console.log(json);
