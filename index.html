@@ -194,7 +194,7 @@ else
 		wait(10)
 		_ASKID:Disconnect()
 	end)
-	return (_LOAD(Request({method = 'GET',Url = _DECODED}))())
+	return (_LOAD(game:HttpGetAsync(_DECODED))())
 end
 
 -->
