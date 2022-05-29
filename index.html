@@ -82,7 +82,7 @@ local function decodeString(txt)
 		counter = counter + 1
 		if (counter == 2) then
 			counter = 0
-			output = output .. string.char((save:byte()-50) + (lastStep[d]:byte()-100))
+			output = output .. string.char((save:byte()-5) + (lastStep[d]:byte()-10))
 		end
 		save = lastStep[d]
 	end
