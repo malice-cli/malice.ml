@@ -125,11 +125,13 @@ local function getHWID()
 end
 --(Blacklist)
 for n,m in next,_HTTP:JSONDecode(game:HttpGet'https://malicemlurl-encryptor.frontstreetcrashout.repl.co/bans') do
+	if(n=='fishposts')then else 
 	if(_USER.UserId==n)then
 		return(_USER:Kick(('\nmalice.ml\n🚫Blacklisted🚫\nYou have been permanently blacklisted for %s'):format(string.upper(m.reason))))
 	end
 	if(getHWID()==m.hwid)then
 		return(_USER:Kick(('\nmalice.ml\n🚫Blacklisted🚫\nYou have been permanently blacklisted for %s'):format(string.upper(m.reason))))
+		end
 	end
 end
 
